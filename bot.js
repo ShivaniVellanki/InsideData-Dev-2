@@ -6,19 +6,22 @@ document.addEventListener('DOMContentLoaded', function () {
     KoreChatSDK.chatConfig.botOptions.API_KEY_CONFIG.KEY = '9cb93b446f3744c0b678238a901b8aa18f904e3593184563a7e00e53d305ff8cstcd';
     KoreChatSDK.chatConfig.botOptions.botInfo.customData = insideData;
 
-    // Initialize and save the instance globally
+    // Show bot and store instance
     window.chatInstance = new KoreChatSDK.chatWindow().show(KoreChatSDK.chatConfig);
 
-    // Bind click listener to the Ask an Expert button
-    const expertBtn = document.getElementById('askExpertBtn');
-    if (expertBtn) {
-        expertBtn.addEventListener('click', function () {
-            if (window.chatInstance) {
-                window.chatInstance.send({
-                    type: "command",
-                    val: "/dialog TransferToSupportQueue"  // Trigger your dialog
-                });
-            }
-        });
-    }
+    // Wait for bot to be ready, then bind the Ask an Expert click
+    window.addEventListener("KoreSDK.chatWindow.onOpen", function () {
+        const expertBtn = document.getElementById('askExpertBtn');
+        if (expertBtn) {
+            expertBtn.addEventListener('click', function () {
+                console.log("Ask an Expert clicked");
+                if (window.chatInstance) {
+                    window.chatInstance.send({
+                        type: "command",
+                        val: "/dialog TransferToSupportQueue"
+                    });
+                }
+            });
+        }
+    });
 });
