@@ -1,0 +1,40 @@
+export default class DatepickerCell {
+    constructor({ type, date, dp, opts, body }?: {
+        type: any;
+        date: any;
+        dp: any;
+        opts: any;
+        body: any;
+    });
+    type: any;
+    singleType: any;
+    date: any;
+    dp: any;
+    opts: any;
+    body: any;
+    customData: boolean;
+    init(): void;
+    _bindDatepickerEvents(): void;
+    unbindDatepickerEvents(): void;
+    _createElement(): void;
+    $cell: HTMLElement | undefined;
+    _getClassName(): string;
+    _getHtml(): any;
+    _isOutOfMinMaxRange(): boolean | undefined;
+    destroy(): void;
+    focus: () => void;
+    focused: boolean | undefined;
+    removeFocus: () => void;
+    select: () => void;
+    selected: boolean | undefined;
+    removeSelect: () => void;
+    _handleRangeStatus(): void;
+    _handleSelectedStatus(): void;
+    _handleInitialFocusStatus(): void;
+    get isDisabled(): boolean;
+    get isOtherMonth(): any;
+    get isOtherDecade(): any;
+    onChangeSelectedDate: () => void;
+    onChangeFocusDate: (date: any) => void;
+    render: () => HTMLElement | undefined;
+}

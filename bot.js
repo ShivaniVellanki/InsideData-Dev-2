@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             botInfo: {
                 name: "Reactive_POC",
-                customData: (typeof getAnalytics === "function") ? getAnalytics() : {}
+                customData: {}
             },
             clientId: "cs-de247d47-4b00-54b7-9261-eddaa39a754e",
             clientSecret: "e5WPiFqgun567KGjzq2LoUqvwnULI2q48/DrJnxdK1Q=",
@@ -16,16 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
         isSendButton: true
     };
 
-    // 🔧 Tell SDK where to inject the chat widget
     KoreChatSDK.chatWindowConfig = {
-        container: "body"
+        container: "body" // attach to <body>
     };
 
-    console.log("Initializing Kore SDK with config", KoreChatSDK.chatConfig);
-
+    console.log("Initializing Kore SDK...");
     window.chatInstance = new KoreChatSDK.chatWindow().show(KoreChatSDK.chatConfig);
 
-    // 🔁 Bind Ask Expert button
+    // Button binding after short delay
     setTimeout(() => {
         const expertBtn = document.getElementById('askExpertBtn');
         if (expertBtn) {

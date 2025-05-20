@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quill-like Store</title>
+
+    <!-- Your styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Kore Web SDK Chat Styles from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kore-web-sdk@11.13.0/dist/umd/kore-web-sdk-umd-chat.min.css">
 </head>
 <body>
     <header>
@@ -19,11 +24,12 @@
                 <i class="fas fa-shopping-cart"></i>
                 <span id="cartCount">0</span>
             </div>
+
             <!-- Ask an Expert Button -->
             <div style="position: absolute; top: 15px; right: 20px;">
-              <button id="askExpertBtn" style="text-decoration: none; background-color: #007bff; color: white; padding: 8px 14px; border-radius: 5px; font-family: Arial, sans-serif; font-size: 14px; border: none; cursor: pointer;">
-                Ask an Expert
-              </button>
+                <button id="askExpertBtn" style="text-decoration: none; background-color: #007bff; color: white; padding: 8px 14px; border-radius: 5px; font-family: Arial, sans-serif; font-size: 14px; border: none; cursor: pointer;">
+                    Ask an Expert
+                </button>
             </div>
         </nav>
     </header>
@@ -45,9 +51,14 @@
         </div>
     </main>
 
+    <!-- Product and Site Scripts -->
     <script src="products.js"></script>
     <script src="script.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/kore-web-sdk@11.13.0/dist/umd/kore-web-sdk-umd-chat.min.js'></script> 
+
+    <!-- Kore Web SDK JS (loaded locally from your project folder) -->
+    <script src="web-sdk/kore-web-sdk-umd-chat.min.js"></script>
+
+    <!-- Your bot logic -->
     <script src="bot.js"></script>
 </body>
 </html>

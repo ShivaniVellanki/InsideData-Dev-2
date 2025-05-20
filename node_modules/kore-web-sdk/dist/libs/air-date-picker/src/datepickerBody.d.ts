@@ -1,0 +1,46 @@
+export default class DatepickerBody {
+    static getDaysDates(dp: any, cb: any): Date[];
+    static getMonthsDates(dp: any, cb: any): Date[];
+    static getYearsDates(dp: any, cb: any): Date[];
+    static getDatesFunction(viewType?: string): typeof DatepickerBody.getDaysDates;
+    constructor({ dp, type, opts }: {
+        dp: any;
+        type: any;
+        opts: any;
+    });
+    dp: any;
+    type: any;
+    opts: any;
+    cells: any[];
+    $el: string;
+    pressed: boolean;
+    isVisible: boolean;
+    init(): void;
+    _bindEvents(): void;
+    _bindDatepickerEvents(): void;
+    _buildBaseHtml(): void;
+    $names: any;
+    $cells: any;
+    _getDayNamesHtml(firstDay?: any): string;
+    renderDayNames(): void;
+    _generateCell(date: any): DatepickerCell;
+    _generateCells(): void;
+    show(): void;
+    hide(): void;
+    destroyCells(): void;
+    destroy(): void;
+    handleClick: (e: any) => void;
+    handleDayNameClick: (e: any) => void;
+    onChangeCurrentView: (view: any) => void;
+    onMouseOverCell: (e: any) => void;
+    onMouseOutCell: () => void;
+    onClickBody: (e: any) => void;
+    onMouseDown: (e: any) => void;
+    rangeFromFocused: boolean | undefined;
+    rangeToFocused: boolean | undefined;
+    onMouseMove: (e: any) => void;
+    onMouseUp: () => void;
+    onChangeViewDate: (date: any, oldViewDate: any) => void;
+    render: () => void;
+}
+import DatepickerCell from "./datepickerCell";
