@@ -16,10 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
         isSendButton: true
     };
 
+    // 🔧 Tell SDK where to inject the chat widget
+    KoreChatSDK.chatWindowConfig = {
+        container: "body"
+    };
+
     console.log("Initializing Kore SDK with config", KoreChatSDK.chatConfig);
 
     window.chatInstance = new KoreChatSDK.chatWindow().show(KoreChatSDK.chatConfig);
 
+    // 🔁 Bind Ask Expert button
     setTimeout(() => {
         const expertBtn = document.getElementById('askExpertBtn');
         if (expertBtn) {
